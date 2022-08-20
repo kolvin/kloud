@@ -1,0 +1,11 @@
+{
+	"aws": {
+		"default_region": "eu-west-1"
+	},
+	"base": {
+		"git_url": "https://github.com/kolvin/kloud-aws"
+	},
+	"terragrunt": {
+		"backend_filename": "_backend.tf"
+	}
+}
