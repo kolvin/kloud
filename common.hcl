@@ -1,22 +1,19 @@
 locals {
-  # Read account configs
-  account_config = read_terragrunt_config(find_in_parent_folders("account.terragrunt.hcl"))
-
   # Read project config file
   config = jsondecode(file("${get_parent_terragrunt_dir()}/config.json"))
 
   # Extract values from folder namespacing
-  # <account_alias>/<component>/<region>
-  path          = path_relative_to_include()
-  path_split    = split("/", local.path)
-  account_alias = local.path_split[0]
-  component     = local.path_split[1]
-  aws_region    = local.path_split[2]
+  # <component>/<account>/<region>
+  path           = path_relative_to_include()
+  path_split     = split("/", local.path)
+  component      = local.path_split[0]
+  account        = local.path_split[1]
+  aws_region     = local.path_split[2]
+  aws_account_id = local.config.aws.accounts[local.account]
 
   backend_filename = local.config.terragrunt.backend_filename
 
   tags = merge(
-    local.account_config.locals.common_resource_tags,
     {
       Location = "${local.config.base.git_url}/${path_relative_to_include()}"
     }
@@ -52,10 +49,8 @@ generate "terragrunt_local_vars" {
     locals {
       terragrunt_dir        = "${get_terragrunt_dir()}"
       parent_terragrunt_dir = "${get_parent_terragrunt_dir()}"
-      user_data_dir         = "${get_parent_terragrunt_dir()}/user_data"
       template_dir          = "${get_parent_terragrunt_dir()}/templates"
       backend_filename      = "${local.backend_filename}"
-      aws_account_id        = "${local.account_config.locals.aws_account_id}"
       aws_region            = "${local.aws_region}"
     }
   EOF
@@ -64,7 +59,8 @@ generate "terragrunt_local_vars" {
 # Configure root level variables that all resources can inherit.
 inputs = merge(
   {
-    aws_region = local.aws_region == "global" ? "${local.config.aws.default_region}" : local.aws_region
+    aws_region     = local.aws_region == "global" ? "${local.config.aws.home_region}" : local.aws_region
+    aws_account_id = local.aws_account_id
   }
 )
 
@@ -74,10 +70,10 @@ remote_state {
 
   config = {
     encrypt        = true
-    bucket         = "terragrunt-state-${local.account_config.locals.aws_account_id}"
+    bucket         = "terragrunt-state-${local.aws_account_id}"
     key            = "${join("/", compact([local.component, local.aws_region]))}/terraform.tfstate"
-    region         = "eu-west-1" # one state bucket per account, multi region support in file path
-    dynamodb_table = "terragrunt-locks-${local.account_config.locals.aws_account_id}"
+    region         = "eu-west-1" # one state bucket per account, multi region support via file path
+    dynamodb_table = "terragrunt-locks-${local.aws_account_id}"
   }
 
   generate = {
