@@ -11,15 +11,14 @@ repos:
       - id: check-executables-have-shebangs
       - id: check-json
       - id: check-merge-conflict
-      - id: pretty-format-json
+      - id: end-of-file-fixer
   - repo: https://github.com/thlorenz/doctoc
     rev: v2.2.0
     hooks:
       - id: doctoc
         args: ["--title=## Contents", "--github"]
-  - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.74.1
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.1.17 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
     hooks:
-      - id: terraform_fmt
-      - id: terraform_docs
-      - id: terraform_tflint
+    - id: shellcheck
+    - id: terragrunt-hclfmt

@@ -4,6 +4,8 @@ help:
 
 install: ## Install pre-commit hooks
 	@pre-commit install
+	@tfenv install
+	@tgswitch
 
 uninstall: ## Uninstall hooks
 	@pre-commit uninstall
