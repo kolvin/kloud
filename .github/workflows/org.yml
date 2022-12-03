@@ -20,10 +20,10 @@ jobs:
           tgswitch
       - name: Terragrunt fmt  
         id: fmt
-        run: Terragrunt fmt -check -diff
+        run: terragrunt fmt -check -diff
       - name: Terragrunt init
         id: init  
-        run: Terragrunt init
+        run: terragrunt init
       - name: cache build
         id: cache-build
         uses: actions/cache@v3
