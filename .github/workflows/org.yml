@@ -1,4 +1,4 @@
-name: Release 📦
+name: Org CI 📦
 
 on:
   push:
