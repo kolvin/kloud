@@ -4,10 +4,6 @@ on:
   push:
     changes: [organization/**]
 
-defaults:
-  run:
-    working-directory: organization/kloud/global
-
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -15,13 +11,12 @@ jobs:
       - name: Checkout files
         uses: actions/checkout@v3
       - name: Set up Homebrew
-        id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
-      - name: Setup Terraform & Terragrunt
+      - name: Set up Terraform & Terragrunt
         run: |
           brew install tfenv warrensbox/tap/tgswitch
           tfenv install
-          tgswitch
+          tgswitch $GITHUB_WORKSPACE
       - name: Terragrunt version
         run: terragrunt --version
       - name: Terragrunt fmt  
