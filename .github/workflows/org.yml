@@ -4,6 +4,10 @@ on:
   push:
     changes: [organization/**]
 
+defaults:
+  run:
+    working-directory: organization/kloud/global
+
 jobs:
   lint:
     runs-on: ubuntu-latest
