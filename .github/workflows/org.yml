@@ -16,7 +16,7 @@ jobs:
         run: |
           brew install tfenv warrensbox/tap/tgswitch
           tfenv install
-          tgswitch $GITHUB_WORKSPACE
+          tgswitch -c $GITHUB_WORKSPACE
       - name: Terragrunt version
         run: terragrunt --version
       - name: Terragrunt fmt  
