@@ -6,6 +6,6 @@ on:
 
 jobs:
   setup:
-    uses: kolvin/workflows/.github/workflows/terragrunt-isntall.yaml@v1.5.0
+    uses: kolvin/workflows/.github/workflows/terragrunt-install.yaml@v1.5.0
   lint:
     uses: kolvin/workflows/.github/workflows/terragrunt-lint.yaml@v1.5.0
