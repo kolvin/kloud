@@ -18,8 +18,7 @@ jobs:
           brew install tfenv warrensbox/tap/tgswitch
           tfenv install
           tgswitch
-      - name: Terragrunt version  
-        id: fmt
+      - name: Terragrunt version
         run: terragrunt --version
       - name: Terragrunt fmt  
         id: fmt
