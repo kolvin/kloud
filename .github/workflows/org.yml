@@ -8,19 +8,22 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout files
+      - name: Checkout files
         uses: actions/checkout@v3
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
       - name: Setup Terraform & Terragrunt
         run: |
           brew install tfenv warrensbox/tap/tgswitch
           tfenv install
           tgswitch
-      - name: terragrunt fmt  
+      - name: Terragrunt fmt  
         id: fmt
-        run: terragrunt fmt -check -diff
-      - name: terragrunt init
+        run: Terragrunt fmt -check -diff
+      - name: Terragrunt init
         id: init  
-        run: terragrunt init
+        run: Terragrunt init
       - name: cache build
         id: cache-build
         uses: actions/cache@v3
@@ -29,7 +32,7 @@ jobs:
           path: |
             **/.terragrunt-cache/**
             **/.terraform.lock.hcl
-      - name: terragrunt validate
+      - name: Terragrunt validate
         id: validate
         run: terragrunt validate
 
