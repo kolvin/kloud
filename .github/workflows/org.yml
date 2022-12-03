@@ -5,8 +5,31 @@ on:
     changes: [organization/**]
 
 jobs:
-  setup:
-    uses: kolvin/workflows/.github/workflows/terragrunt-install.yaml@v1.5.0
   lint:
-    needs: setup
-    uses: kolvin/workflows/.github/workflows/terragrunt-lint.yaml@v1.5.0
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout files
+        uses: actions/checkout@v3
+      - name: Setup Terraform & Terragrunt
+        run: |
+          brew install tfenv warrensbox/tap/tgswitch
+          tfenv install
+          tgswitch
+      - name: terragrunt fmt  
+        id: fmt
+        run: terragrunt fmt -check -diff
+      - name: terragrunt init
+        id: init  
+        run: terragrunt init
+      - name: cache build
+        id: cache-build
+        uses: actions/cache@v3
+        with:
+          key: ${{ github.sha }}-terragrunt-cache
+          path: |
+            **/.terragrunt-cache/**
+            **/.terraform.lock.hcl
+      - name: terragrunt validate
+        id: validate
+        run: terragrunt validate
+
