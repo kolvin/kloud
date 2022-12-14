@@ -1,0 +1,14 @@
+name: Terragrunt ⚙️
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  terragrunt:
+    uses: kolvin/workflows/.github/workflows/terragrunt.yaml@v1.8.0
+    with:
+      working-directory: "organization/kloud/global"
+      target-account-id: "016272825626"
+      target-region: "eu-west-1"
