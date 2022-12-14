@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/kolvin/kloud/compare/v1.0.1...v1.0.2) (2022-12-14)
+
+
+### Bug Fixes
+
+* lint ([e3c4704](https://github.com/kolvin/kloud/commit/e3c470463763ce6545fb01ddc3a39acd566c2764))
+
 ## [1.0.1](https://github.com/kolvin/kloud/compare/v1.0.0...v1.0.1) (2022-10-31)
 
 
