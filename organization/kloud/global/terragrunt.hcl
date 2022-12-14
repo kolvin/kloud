@@ -10,7 +10,7 @@ inputs = {
 
   organization = {
     enabled_policy_types = ["SERVICE_CONTROL_POLICY"]
-    feature_set = "ALL"
+    feature_set          = "ALL"
     service_access_principals = [
       "member.org.stacksets.cloudformation.amazonaws.com"
     ]
