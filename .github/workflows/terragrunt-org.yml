@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths: [ organization/kloud/global/**  ]
   pull_request:
+    paths: [ organization/kloud/global/**  ]
 
 jobs:
   terragrunt:
