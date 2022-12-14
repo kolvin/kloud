@@ -3,19 +3,13 @@ name: Terragrunt ⚙️
 on:
   push:
     branches: [ main ]
+    paths: [ organization/kloud/global/**  ]
   pull_request:
 
 jobs:
-  root-organization:
+  terragrunt:
     uses: kolvin/workflows/.github/workflows/terragrunt.yaml@v1.8.0
     with:
       working-directory: "organization/kloud/global"
       target-account-id: "016272825626"
       target-region: "eu-west-1"
-  prod-route53:
-    uses: kolvin/workflows/.github/workflows/terragrunt.yaml@v1.8.0
-    with:
-      working-directory: "organization/route53/global"
-      target-account-id: "310394544294"
-      target-region: "eu-west-1"
-
