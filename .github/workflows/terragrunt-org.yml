@@ -3,10 +3,16 @@ name: Terragrunt ⚙️
 on:
   push:
     branches: [ main ]
-    paths: [ organization/kloud/global/**  ]
+    paths: 
+      - 'organization/kloud/global/**'
   pull_request:
-    types: [ assigned, opened, synchronize, reopened ]
-    paths: [ organization/kloud/global/** ]
+    types: 
+      - assigned
+      - opened
+      - synchronize
+      - reopened
+    paths: 
+      - 'organization/kloud/global/**'
 
 jobs:
   terragrunt:
