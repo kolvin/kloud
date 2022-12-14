@@ -3,10 +3,19 @@ include "root" {
 }
 
 terraform {
-  source = "git::https://github.com/kolvin/terraform-aws-organizations//?ref=v1.1.8"
+  source = "git::https://github.com/kolvin/terraform-aws-organizations//?ref=v1.2.0"
 }
 
 inputs = {
+
+  organization = {
+    enabled_policy_types = ["SERVICE_CONTROL_POLICY"]
+    feature_set          = "ALL"
+    service_access_principals = [
+      "member.org.stacksets.cloudformation.amazonaws.com"
+    ]
+  }
+
   accounts = [
     {
       account_name               = "playground"
