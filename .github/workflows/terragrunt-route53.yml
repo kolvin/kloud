@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths: [ route53/kloud/global/**  ]
   pull_request:
+    types: [ assigned, opened, synchronize, reopened ]
     paths: [ route53/kloud/global/**  ]
 
 jobs:
