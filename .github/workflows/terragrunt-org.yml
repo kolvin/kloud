@@ -1,9 +1,18 @@
-name: Terragrunt ⚙️
+name: org-root-global 
 
 on:
   push:
     branches: [ main ]
+    paths: 
+      - 'organization/kloud/global/**'
   pull_request:
+    types: 
+      - assigned
+      - opened
+      - synchronize
+      - reopened
+    paths: 
+      - 'organization/kloud/global/**'
 
 jobs:
   terragrunt:
