@@ -4,20 +4,18 @@ on:
   push:
     branches: [ main ]
     paths: 
-      - 'route53/kloud/global/**'
+      - 'route53/prod/global/**'
   pull_request:
     types: 
       - assigned
       - opened
       - synchronize
       - reopened
-    paths: 
-      - 'route53/kloud/global/**'
 
 jobs:
   terragrunt:
     uses: kolvin/workflows/.github/workflows/terragrunt.yaml@v1.8.0
     with:
-      working-directory: "route53/kloud/global"
+      working-directory: "route53/prod/global"
       target-account-id: "310394544294"
       target-region: "eu-west-1"
