@@ -15,14 +15,6 @@ inputs = {
       vpc_id        = ""
       tags          = {}
       dns_records   = []
-    },
-    {
-      name          = "dev.kolv.in"
-      type          = "public"
-      force_destroy = false
-      vpc_id        = ""
-      tags          = {}
-      dns_records   = []
     }
   ]
 }
