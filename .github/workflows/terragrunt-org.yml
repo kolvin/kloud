@@ -1,4 +1,4 @@
-name: Terragrunt - AWS Org
+name: org-root-global 
 
 on:
   push:

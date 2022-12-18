@@ -1,4 +1,4 @@
-name: Terragrunt - AWS Route53
+name: route53-prod-eu-west-1 
 
 on:
   push:
