@@ -11,6 +11,8 @@ on:
       - opened
       - synchronize
       - reopened
+    paths: 
+      - 'route53/prod/global/**'
 
 jobs:
   terragrunt:
