@@ -13,8 +13,8 @@ inputs = {
       type          = "public"
       force_destroy = false
       vpc_id        = ""
-      tags = {}
-      dns_records = []
+      tags          = {}
+      dns_records   = []
     }
   ]
 }
