@@ -13,9 +13,7 @@ inputs = {
       type          = "public"
       force_destroy = false
       vpc_id        = ""
-      tags = {
-        foo = bar
-      }
+      tags = {}
       dns_records = []
     }
   ]

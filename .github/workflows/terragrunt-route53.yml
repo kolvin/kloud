@@ -1,4 +1,4 @@
-name: Terragrunt ⚙️
+name: Terragrunt - AWS Route53
 
 on:
   push:
