@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/kolvin/kloud/compare/v1.0.2...v1.1.0) (2022-12-18)
+
+
+### Features
+
+* mvp for route53 hosted zone ([#3](https://github.com/kolvin/kloud/issues/3)) ([2fbdb79](https://github.com/kolvin/kloud/commit/2fbdb79f096f49c5895520ac8c45518e685212f9))
+
 ## [1.0.2](https://github.com/kolvin/kloud/compare/v1.0.1...v1.0.2) (2022-12-14)
 
 
