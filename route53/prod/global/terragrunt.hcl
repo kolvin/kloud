@@ -9,14 +9,14 @@ terraform {
 inputs = {
   route53_zones = [
     {
-      name              = "kolv.in"
-      type              = "public"
-      force_destroy     = false
-      vpc_id            = ""
-      tags              = {
+      name          = "kolv.in"
+      type          = "public"
+      force_destroy = false
+      vpc_id        = ""
+      tags = {
         foo = bar
       }
-      dns_records       = []
+      dns_records = []
     }
   ]
 }
