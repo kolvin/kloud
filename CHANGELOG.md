@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/kolvin/kloud/compare/v1.1.0...v1.2.0) (2022-12-21)
+
+
+### Features
+
+* **route53:** set DNS records for personal domain ([#4](https://github.com/kolvin/kloud/issues/4)) ([5495792](https://github.com/kolvin/kloud/commit/549579207d2216eb7d86055cc5aec20731a0300f))
+
 # [1.1.0](https://github.com/kolvin/kloud/compare/v1.0.2...v1.1.0) (2022-12-18)
 
 
