@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
 jobs:
   release:
     uses: kolvin/workflows/.github/workflows/automated-semver.yaml@v1.5.0
