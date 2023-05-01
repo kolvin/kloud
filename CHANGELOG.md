@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/kolvin/kloud/compare/v1.2.1...v1.2.2) (2023-05-01)
+
+
+### Bug Fixes
+
+* **ci:** set git ref to main for automated release + set release token perms ([d9d5a96](https://github.com/kolvin/kloud/commit/d9d5a96f96c52e3874491692c672a6a24eb8b89b))
+
 ## [1.2.1](https://github.com/kolvin/kloud/compare/v1.2.0...v1.2.1) (2023-05-01)
 
 
