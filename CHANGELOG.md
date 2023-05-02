@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/kolvin/kloud/compare/v1.2.2...v1.3.0) (2023-05-02)
+
+
+### Features
+
+* **vpc:** adopt default vpc in prod ([#5](https://github.com/kolvin/kloud/issues/5)) ([83ab88e](https://github.com/kolvin/kloud/commit/83ab88ed16480bfcde392e7aa8c8a7f38ee24585))
+
 ## [1.2.2](https://github.com/kolvin/kloud/compare/v1.2.1...v1.2.2) (2023-05-01)
 
 
