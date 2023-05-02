@@ -1,0 +1,23 @@
+name: vpc-prod-eu-west-1 
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'vpc/prod/eu-west-1/**'
+  pull_request:
+    types: 
+      - assigned
+      - opened
+      - synchronize
+      - reopened
+    paths: 
+      - 'vpc/prod/eu-west-1/**'
+
+jobs:
+  terragrunt:
+    uses: kolvin/workflows/.github/workflows/terragrunt.yaml@v1.8.0
+    with:
+      working-directory: "vpc/prod/eu-west-1"
+      target-account-id: "310394544294"
+      target-region: "eu-west-1"
