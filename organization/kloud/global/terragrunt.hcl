@@ -45,11 +45,10 @@ inputs = {
       org_unit_path              = "root/workloads/SDLC"
     },
     {
-      account_name                 = "prod"
-      email                        = "aws-prod@kolv.in"
-      iam_user_access_to_billing   = "DENY"
-      org_unit_path                = "root/workloads"
-      delegated_service_principals = ["abc", "xyz"]
+      account_name               = "prod"
+      email                      = "aws-prod@kolv.in"
+      iam_user_access_to_billing = "DENY"
+      org_unit_path              = "root/workloads"
     }
   ]
 
