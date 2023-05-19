@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/kolvin/kloud/compare/v1.3.0...v1.3.1) (2023-05-19)
+
+
+### Bug Fixes
+
+* **org:** switch module source ([745d67b](https://github.com/kolvin/kloud/commit/745d67b5c79a40a19fd4d0787afb55822d11d5d4))
+
 # [1.3.0](https://github.com/kolvin/kloud/compare/v1.2.2...v1.3.0) (2023-05-02)
 
 
