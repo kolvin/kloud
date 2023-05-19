@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/kolvin/kloud/compare/v1.3.1...v1.3.2) (2023-05-19)
+
+
+### Bug Fixes
+
+* **org:** remove dummy service prinipals ([9574bdb](https://github.com/kolvin/kloud/commit/9574bdb6694eb24c19a68379ea45726744dacfc9))
+
 ## [1.3.1](https://github.com/kolvin/kloud/compare/v1.3.0...v1.3.1) (2023-05-19)
 
 
