@@ -20,4 +20,5 @@ jobs:
     with:
       working-directory: "ci-role-provisioner/kloud/global"
       target-account-id: "310394544294"
+      target-region: "eu-west-1"
       ci-role-name: "github-ci-admin"
