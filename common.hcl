@@ -85,11 +85,12 @@ remote_state {
   backend = "s3"
 
   config = {
-    encrypt        = true
-    bucket         = "terraform-state-${local.aws_account_id}"
-    key            = "${join("/", compact([local.component, local.aws_region]))}/terraform.tfstate"
-    region         = "eu-west-1" # one state bucket per account, multi region support via file path
-    dynamodb_table = "terraform-locks-${local.aws_account_id}"
+    encrypt               = true
+    bucket                = "terraform-state-${local.aws_account_id}"
+    key                   = "${join("/", compact([local.component, local.aws_region]))}/terraform.tfstate"
+    region                = "eu-west-1" # one state bucket per account, multi region support via file path
+    dynamodb_table        = "terraform-locks-${local.aws_account_id}"
+    disable_bucket_update = true
   }
 
   generate = {
