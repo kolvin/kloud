@@ -3,7 +3,7 @@ include "common" {
 }
 
 terraform {
-  source = "git::https://github.com/kloud-cnf/terraform-aws-ci-role-provisioner//?ref=v1.0.2"
+  source = "git::https://github.com/kloud-cnf/terraform-aws-ci-role-provisioner//?ref=v1.0.3"
 }
 
 inputs = {
