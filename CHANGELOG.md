@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/kolvin/kloud/compare/v1.4.0...v1.4.1) (2023-06-16)
+
+
+### Bug Fixes
+
+* **terragrunt, provider:** skip bucket policy check ([36dc7a6](https://github.com/kolvin/kloud/commit/36dc7a67ab2514bc0491ed583e722cf294b3a570))
+
 # [1.4.0](https://github.com/kolvin/kloud/compare/v1.3.2...v1.4.0) (2023-06-16)
 
 
