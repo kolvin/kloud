@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/kolvin/kloud/compare/v1.3.2...v1.4.0) (2023-06-16)
+
+
+### Bug Fixes
+
+* **ci, release:** refactor towards automated release workflow from kloud-cnf org ([6bfbb8d](https://github.com/kolvin/kloud/commit/6bfbb8dc8aec7894f3243defc22207a3e84ad972))
+
+
+### Features
+
+* **remote-state:** deploy state bucket + lock table to all AWS accounts ([e1f87ff](https://github.com/kolvin/kloud/commit/e1f87ff1c2302981c53bc64273d47627002bc5d9))
+
 ## [1.3.2](https://github.com/kolvin/kloud/compare/v1.3.1...v1.3.2) (2023-05-19)
 
 
