@@ -32,6 +32,22 @@ terraform {
     commands  = ["apply"]
     arguments = ["${get_terragrunt_dir()}/tgplan.out"]
   }
+
+  extra_arguments "retry_lock" {
+    commands = [
+      "init",
+      "apply",
+      "refresh",
+      "import",
+      "plan",
+      "taint",
+      "untaint"
+    ]
+
+    arguments = [
+      "-lock-timeout=10m"
+    ]
+  }
 }
 
 # Generate an AWS provider block
@@ -70,10 +86,10 @@ remote_state {
 
   config = {
     encrypt        = true
-    bucket         = "terragrunt-state-${local.aws_account_id}"
+    bucket         = "terraform-state-${local.aws_account_id}"
     key            = "${join("/", compact([local.component, local.aws_region]))}/terraform.tfstate"
     region         = "eu-west-1" # one state bucket per account, multi region support via file path
-    dynamodb_table = "terragrunt-locks-${local.aws_account_id}"
+    dynamodb_table = "terraform-locks-${local.aws_account_id}"
   }
 
   generate = {
