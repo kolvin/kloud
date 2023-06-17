@@ -1,0 +1,29 @@
+name: vpc-playground-eu-west-1 
+
+on:
+  pull_request:
+    branches: main
+    types: 
+      - assigned
+      - opened
+      - synchronize
+      - reopened
+    paths: 
+      - 'vpc/playground/eu-west-1/**'
+      - '.github/workflows/terragrunt-playground-vpc.yml'
+      - 'common.hcl'
+  push:
+    branches: main
+
+jobs:
+  terragrunt:
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    uses: kloud-cnf/workflows/.github/workflows/terragrunt.yaml@v0.3.7
+    with:
+      working-directory: "vpc/playground/eu-west-1"
+      target-account-id: "128335613984"
+      target-region: "eu-west-1"
+      ci-role-name: "github-ci-infrastructure-provisoner"
