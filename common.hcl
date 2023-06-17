@@ -32,22 +32,6 @@ terraform {
     commands  = ["apply"]
     arguments = ["${get_terragrunt_dir()}/tgplan.out"]
   }
-
-  extra_arguments "retry_lock" {
-    commands = [
-      "init",
-      "apply",
-      "refresh",
-      "import",
-      "plan",
-      "taint",
-      "untaint"
-    ]
-
-    arguments = [
-      "-lock-timeout=10m"
-    ]
-  }
 }
 
 # Generate an AWS provider block
