@@ -1,11 +1,8 @@
 name: vpc-prod-eu-west-1 
 
 on:
-  push:
-    branches: [ main ]
-    paths: 
-      - 'vpc/prod/eu-west-1/**'
   pull_request:
+    branches: main
     types: 
       - assigned
       - opened
@@ -13,11 +10,16 @@ on:
       - reopened
     paths: 
       - 'vpc/prod/eu-west-1/**'
+      - '.github/workflows/terragrunt-prod-vpc.yml'
+      - 'common.hcl'
+  push:
+    branches: main
 
 jobs:
   terragrunt:
-    uses: kolvin/workflows/.github/workflows/terragrunt.yaml@v1.8.0
+    uses: kloud-cnf/workflows/.github/workflows/terragrunt.yaml@v0.3.7
     with:
       working-directory: "vpc/prod/eu-west-1"
       target-account-id: "310394544294"
       target-region: "eu-west-1"
+      ci-role-name: "github-ci-infrastructure-provisoner"

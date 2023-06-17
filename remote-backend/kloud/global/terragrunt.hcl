@@ -12,7 +12,7 @@ inputs = {
     lock_table_name_suffix   = "terraform-state-lock"
     state_bucket_allowed_roles = [
       "OrgAccessRole",
-      "ci-role-provisioner",
+      "github-ci-role-provisioner",
       "github-ci-infrastructure-provisoner"
     ]
     state_bucket_allowed_users = [

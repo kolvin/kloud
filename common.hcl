@@ -25,28 +25,12 @@ locals {
 terraform {
   extra_arguments "plan" {
     commands  = ["plan"]
-    arguments = ["-out=${get_terragrunt_dir()}/tgplan.out"]
+    arguments = ["-out=${get_terragrunt_dir()}/tgplan.out", "-lock-timeout=10m"]
   }
 
   extra_arguments "apply" {
     commands  = ["apply"]
     arguments = ["${get_terragrunt_dir()}/tgplan.out"]
-  }
-
-  extra_arguments "retry_lock" {
-    commands = [
-      "init",
-      "apply",
-      "refresh",
-      "import",
-      "plan",
-      "taint",
-      "untaint"
-    ]
-
-    arguments = [
-      "-lock-timeout=10m"
-    ]
   }
 }
 
