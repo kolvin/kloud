@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/kolvin/kloud/compare/v1.4.2...v1.4.3) (2023-06-17)
+
+
+### Bug Fixes
+
+* **vpc, ci:** inline prod vpc workflow ([#8](https://github.com/kolvin/kloud/issues/8)) ([70e4a63](https://github.com/kolvin/kloud/commit/70e4a63969a5abbf1f5a2d53f3dcd4148998f542))
+
 ## [1.4.2](https://github.com/kolvin/kloud/compare/v1.4.1...v1.4.2) (2023-06-17)
 
 
