@@ -1,23 +1,29 @@
-name: org-root-global 
+name: org-kloud-global
 
 on:
-  push:
-    branches: [ main ]
-    paths: 
-      - 'organization/kloud/global/**'
   pull_request:
+    branches: main
     types: 
       - assigned
       - opened
       - synchronize
       - reopened
     paths: 
-      - 'organization/kloud/global/**'
+      - 'org/kloud/global/**'
+      - '.github/workflows/terragrunt-org-vpc.yml'
+      - 'common.hcl'
+  push:
+    branches: main
 
 jobs:
   terragrunt:
-    uses: kolvin/workflows/.github/workflows/terragrunt.yaml@v1.8.0
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    uses: kloud-cnf/workflows/.github/workflows/terragrunt.yaml@v0.3.7
     with:
-      working-directory: "organization/kloud/global"
-      target-account-id: "016272825626"
+      working-directory: "org/kloud/global"
+      target-account-id: "310394544294"
       target-region: "eu-west-1"
+      ci-role-name: "github-ci-infrastructure-provisoner"
