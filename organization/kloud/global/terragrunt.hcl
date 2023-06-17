@@ -23,12 +23,6 @@ inputs = {
       }
     },
     {
-      path = "root/workloads/SDLC"
-      child_defaults = {
-        iam_user_access_to_billing = "ALLOW"
-      }
-    },
-    {
       path                   = "root/labs"
       service_control_policy = "labs"
       child_defaults = {
@@ -42,7 +36,7 @@ inputs = {
       account_name               = "dev"
       email                      = "aws-dev@kolv.in"
       iam_user_access_to_billing = "DENY"
-      org_unit_path              = "root/workloads/SDLC"
+      org_unit_path              = "root/workloads"
     },
     {
       account_name               = "prod"
