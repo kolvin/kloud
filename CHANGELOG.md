@@ -1,3 +1,35 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Contents
+
+  - [1.4.1 (2023-06-16)](#141-2023-06-16)
+    - [Bug Fixes](#bug-fixes)
+- [1.4.0 (2023-06-16)](#140-2023-06-16)
+    - [Bug Fixes](#bug-fixes-1)
+    - [Features](#features)
+  - [1.3.2 (2023-05-19)](#132-2023-05-19)
+    - [Bug Fixes](#bug-fixes-2)
+  - [1.3.1 (2023-05-19)](#131-2023-05-19)
+    - [Bug Fixes](#bug-fixes-3)
+- [1.3.0 (2023-05-02)](#130-2023-05-02)
+    - [Features](#features-1)
+  - [1.2.2 (2023-05-01)](#122-2023-05-01)
+    - [Bug Fixes](#bug-fixes-4)
+  - [1.2.1 (2023-05-01)](#121-2023-05-01)
+    - [Bug Fixes](#bug-fixes-5)
+- [1.2.0 (2022-12-21)](#120-2022-12-21)
+    - [Features](#features-2)
+- [1.1.0 (2022-12-18)](#110-2022-12-18)
+    - [Features](#features-3)
+  - [1.0.2 (2022-12-14)](#102-2022-12-14)
+    - [Bug Fixes](#bug-fixes-6)
+  - [1.0.1 (2022-10-31)](#101-2022-10-31)
+    - [Bug Fixes](#bug-fixes-7)
+- [1.0.0 (2022-08-12)](#100-2022-08-12)
+    - [Bug Fixes](#bug-fixes-8)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## [1.4.1](https://github.com/kolvin/kloud/compare/v1.4.0...v1.4.1) (2023-06-16)
 
 
