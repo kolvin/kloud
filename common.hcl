@@ -25,7 +25,7 @@ locals {
 terraform {
   extra_arguments "plan" {
     commands  = ["plan"]
-    arguments = ["-out=${get_terragrunt_dir()}/tgplan.out", "-lock-timeout=10m"]
+    arguments = ["-out=${get_terragrunt_dir()}/tgplan.out"]
   }
 
   extra_arguments "apply" {
