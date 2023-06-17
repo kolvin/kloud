@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/kolvin/kloud/compare/v1.4.1...v1.4.2) (2023-06-17)
+
+
+### Bug Fixes
+
+* **org, iam:** ci-role-provisoner ([#6](https://github.com/kolvin/kloud/issues/6)) ([ff5857f](https://github.com/kolvin/kloud/commit/ff5857fc919410f958fd84be7850c6ddb6cbd481))
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
