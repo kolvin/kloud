@@ -24,6 +24,6 @@ jobs:
     uses: kloud-cnf/workflows/.github/workflows/terragrunt.yaml@v0.3.7
     with:
       working-directory: "org/kloud/global"
-      target-account-id: "310394544294"
+      target-account-id: "016272825626"
       target-region: "eu-west-1"
       ci-role-name: "github-ci-infrastructure-provisoner"
