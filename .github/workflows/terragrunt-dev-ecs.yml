@@ -1,0 +1,29 @@
+name: ecs-dev-eu-west-1 
+
+on:
+  pull_request:
+    branches: main
+    types: 
+      - assigned
+      - opened
+      - synchronize
+      - reopened
+    paths: 
+      - 'ecs/dev/eu-west-1/**'
+      - '.github/workflows/terragrunt-dev-ecs.yml'
+      - 'common.hcl'
+  push:
+    branches: main
+
+jobs:
+  terragrunt:
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    uses: kloud-cnf/workflows/.github/workflows/terragrunt.yaml@v0.3.7
+    with:
+      working-directory: "ecs/dev/eu-west-1"
+      target-account-id: "943824751361"
+      target-region: "eu-west-1"
+      ci-role-name: "github-ci-infrastructure-provisoner"
