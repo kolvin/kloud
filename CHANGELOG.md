@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/kolvin/kloud/compare/v1.4.4...v1.4.5) (2023-06-18)
+
+
+### Bug Fixes
+
+* **ecs:** create service linked role ([b110a70](https://github.com/kolvin/kloud/commit/b110a7095a4963bae80ff3682486eb08f61b6715))
+
 ## [1.4.4](https://github.com/kolvin/kloud/compare/v1.4.3...v1.4.4) (2023-06-18)
 
 
