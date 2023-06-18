@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/kolvin/kloud/compare/v1.4.3...v1.4.4) (2023-06-18)
+
+
+### Bug Fixes
+
+* **ecs:** deploy dev cluster with fargate compute ([605b616](https://github.com/kolvin/kloud/commit/605b616b425d98b3a109c80cb0bd6f2c24f28eaa))
+
 ## [1.4.3](https://github.com/kolvin/kloud/compare/v1.4.2...v1.4.3) (2023-06-17)
 
 
