@@ -52,6 +52,7 @@ generate "terragrunt_local_vars" {
       template_dir          = "${get_parent_terragrunt_dir()}/templates"
       backend_filename      = "${local.backend_filename}"
       aws_region            = "${local.aws_region}"
+      account               = "${local.account}"
     }
   EOF
 }
