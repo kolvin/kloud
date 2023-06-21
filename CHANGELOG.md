@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/kolvin/kloud/compare/v1.4.6...v1.4.7) (2023-06-21)
+
+
+### Bug Fixes
+
+* **ecs:** prefix dev cluster with region ([9b7abeb](https://github.com/kolvin/kloud/commit/9b7abeba30aaf8b18ec5e62d7a23d7f585aa0208))
+
 ## [1.4.6](https://github.com/kolvin/kloud/compare/v1.4.5...v1.4.6) (2023-06-21)
 
 
