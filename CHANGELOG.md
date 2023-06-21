@@ -1,3 +1,10 @@
+## [1.4.6](https://github.com/kolvin/kloud/compare/v1.4.5...v1.4.6) (2023-06-21)
+
+
+### Bug Fixes
+
+* **ci:** run main jobs on changes to relative paths ([1721a67](https://github.com/kolvin/kloud/commit/1721a67aebd05a5f7bac31deb032f7a6152f0be9))
+
 ## [1.4.5](https://github.com/kolvin/kloud/compare/v1.4.4...v1.4.5) (2023-06-18)
 
 
