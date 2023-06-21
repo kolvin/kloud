@@ -14,6 +14,10 @@ on:
       - 'common.hcl'
   push:
     branches: main
+    paths:
+      - 'vpc/playground/eu-west-1/**'
+      - '.github/workflows/terragrunt-playground-vpc.yml'
+      - 'common.hcl'
 
 jobs:
   terragrunt:

@@ -14,6 +14,10 @@ on:
       - 'common.hcl'
   push:
     branches: main
+    paths:
+      - 'ecs/dev/eu-west-1/**'
+      - '.github/workflows/terragrunt-dev-ecs.yml'
+      - 'common.hcl'
 
 jobs:
   terragrunt:
