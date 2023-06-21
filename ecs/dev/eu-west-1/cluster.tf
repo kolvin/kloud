@@ -5,7 +5,7 @@ resource "aws_iam_service_linked_role" "ecs" {
 module "ecs" {
   source = "git::https://github.com/terraform-aws-modules/terraform-aws-ecs//?ref=v5.2.0"
   
-  cluster_name = local.account
+  cluster_name = "${local.aws_region}-${local.environment}"
 
   # Capacity provider
   fargate_capacity_providers = {

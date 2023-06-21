@@ -13,11 +13,10 @@ locals {
 
   backend_filename = local.config.terragrunt.backend_filename
 
-  tags = merge(
-    {
-      Location = "${local.config.base.git_url}/${path_relative_to_include()}"
-    }
-  )
+  default_tags = {
+    environment = local.account
+    Location    = "${local.config.base.git_url}/${path_relative_to_include()}"
+  }
 }
 
 # DRY terragrunt actions
@@ -52,7 +51,7 @@ generate "terragrunt_local_vars" {
       template_dir          = "${get_parent_terragrunt_dir()}/templates"
       backend_filename      = "${local.backend_filename}"
       aws_region            = "${local.aws_region}"
-      account               = "${local.account}"
+      environment           = "${local.account}"
     }
   EOF
 }
@@ -62,6 +61,8 @@ inputs = merge(
   {
     aws_region     = local.aws_region == "global" ? "${local.config.aws.home_region}" : local.aws_region
     aws_account_id = local.aws_account_id
+    environment    = local.account
+    default_tags   = local.default_tags
   }
 )
 
