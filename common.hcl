@@ -54,7 +54,6 @@ generate "terragrunt_local_vars" {
       aws_region            = "${local.aws_region}"
       environment           = "${local.account}"
       component             = "${local.component}"
-      instance              = "${try(local.instance, null)}"
     }
   EOF
 }
