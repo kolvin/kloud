@@ -3,7 +3,7 @@ locals {
   config = jsondecode(file("${get_parent_terragrunt_dir()}/config.json"))
 
   # Extract values from folder namespacing
-  # <component>/<account>/<region>/<instabce>
+  # <component>/<account>/<region>/<instance>
   path           = path_relative_to_include()
   path_split     = split("/", local.path)
   component      = local.path_split[0]
