@@ -1,4 +1,4 @@
-name: vpc-playground-eu-west-1 
+name: vpc-dev-main-eu-west-1 
 
 on:
   pull_request:
@@ -9,14 +9,14 @@ on:
       - synchronize
       - reopened
     paths: 
-      - 'vpc/playground/eu-west-1/**'
-      - '.github/workflows/terragrunt-playground-vpc.yml'
+      - 'vpc/dev/eu-west-1/main/**'
+      - '.github/workflows/terragrunt-dev-main-vpc.yml'
       - 'common.hcl'
   push:
     branches: main
     paths:
-      - 'vpc/playground/eu-west-1/**'
-      - '.github/workflows/terragrunt-playground-vpc.yml'
+      - 'vpc/dev/eu-west-1/**'
+      - '.github/workflows/terragrunt-dev-main-vpc.yml'
       - 'common.hcl'
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
       pull-requests: write
     uses: kloud-cnf/workflows/.github/workflows/terragrunt.yaml@v0.3.7
     with:
-      working-directory: "vpc/playground/eu-west-1"
-      target-account-id: "128335613984"
+      working-directory: "vpc/dev/eu-west-1/main"
+      target-account-id: "943824751361"
       target-region: "eu-west-1"
       ci-role-name: "github-ci-infrastructure-provisoner"

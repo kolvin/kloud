@@ -3,12 +3,13 @@ locals {
   config = jsondecode(file("${get_parent_terragrunt_dir()}/config.json"))
 
   # Extract values from folder namespacing
-  # <component>/<account>/<region>
+  # <component>/<account>/<region>/<instance>
   path           = path_relative_to_include()
   path_split     = split("/", local.path)
   component      = local.path_split[0]
   account        = local.path_split[1]
   aws_region     = local.path_split[2]
+  instance       = length(local.path_split) > 3 ? local.path_split[3] : null
   aws_account_id = local.config.aws.accounts[local.account]
 
   backend_filename = local.config.terragrunt.backend_filename
@@ -52,6 +53,7 @@ generate "terragrunt_local_vars" {
       backend_filename      = "${local.backend_filename}"
       aws_region            = "${local.aws_region}"
       environment           = "${local.account}"
+      component             = "${local.component}"
     }
   EOF
 }
@@ -73,7 +75,7 @@ remote_state {
   config = {
     encrypt               = true
     bucket                = "terraform-state-${local.aws_account_id}"
-    key                   = "${join("/", compact([local.component, local.aws_region]))}/terraform.tfstate"
+    key                   = "${join("/", compact([local.component, local.aws_region, local.instance]))}/terraform.tfstate"
     region                = "eu-west-1" # one state bucket per account, multi region support via file path
     dynamodb_table        = "terraform-locks-${local.aws_account_id}"
     disable_bucket_update = true

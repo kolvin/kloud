@@ -1,0 +1,33 @@
+name: vpc-dev-eu-west-1 
+
+on:
+  pull_request:
+    branches: main
+    types: 
+      - assigned
+      - opened
+      - synchronize
+      - reopened
+    paths: 
+      - 'vpc/dev/eu-west-1/default/**'
+      - '.github/workflows/terragrunt-dev-vpc.yml'
+      - 'common.hcl'
+  push:
+    branches: main
+    paths:
+      - 'vpc/dev/eu-west-1/default/**'
+      - '.github/workflows/terragrunt-dev-vpc.yml'
+      - 'common.hcl'
+
+jobs:
+  terragrunt:
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    uses: kloud-cnf/workflows/.github/workflows/terragrunt.yaml@v0.3.7
+    with:
+      working-directory: "vpc/dev/eu-west-1/default/"
+      target-account-id: "943824751361"
+      target-region: "eu-west-1"
+      ci-role-name: "github-ci-infrastructure-provisoner"
